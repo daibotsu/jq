@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet"> -->	
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+ <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> -->
+
+
+<link rel="stylesheet" type="text/css" href="slick-1.8.1/slick-1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick-1.8.1/slick-1.8.1/slick/slick-theme.css">
+<style type="text/css">
+
+* {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.textAnimation {
+	font-size: 70px;
+	text-align: center;
+	margin-top: 40px;
+	letter-spacing: 0.2em;
+}
+@keyframes showTextFromTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-200px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.textAnimation {
+	animation: showTextFromTop ease-out 1.5s backwards;
+	display: inline-block;
+}
+
+table {
+	margin: 100px auto;
+}
+.even {
+	background: #F2F2F2;
+}
+th {
+	background: #222222;
+	color: white;
+}
+.odd {
+	background: #444444;
+}
+th, td {
+	padding: 5px;
+	font-size: small;
+}
+.hover {
+	background: #B2D8FF;
+}
+#color {
+	max-height: 500px;
+	height: 100vw;
+}
+#wrap {
+	max-width: 500px;
+	height: 100%;
+	margin: 50px auto;
+}
+#wrap ul {
+	position: relative;
+	display: flex;
+	height: 100%;
+}
+#wrap ul li {
+	font-size: 70px;
+	text-align: center;
+	height: 100%;
+	line-height: 500px;
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 50%;
+	transform: translateX(-50%);
+}
+.colors {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.red {
+	background: red;
+}
+.blue {
+	background: blue;
+}
+.yellow {
+	background: yellow;
+}
+.indicator {
+	max-width: 600px;
+	width: calc(100% - 50px);
+	height: 50px;
+	display: flex;
+	margin: 20px auto;
+}
+.skew-box {
+	display: block;
+	width: calc(100% / 3);
+	height: 50px;
+	position: relative;
+	transform: skewX(160deg);
+}
+.skew-inner {
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto -25px;
+	transform: skewX(-160deg); 
+}
+.sb1 {
+	background-color: red;
+}
+.sb2 {
+	background-color: yellow;
+}
+.sb3 {
+	background-color: orange;
+}
+.slider {
+	max-width: 600px;
+	width: 100%;
+	height: 400px;
+	margin: 20px auto;
+	position: relative;
+}
+.slider div {
+	width: 100%;
+	height: 400px;
+	border: solid 1px black;
+	box-sizing: border-box;
+	position: absolute;
+}
+.slider div:first-child {
+	background-color: red;
+}
+.slider div:nth-child(2) {
+	background-color: yellow;
+}
+.slider div:last-child {
+	background-color: orange;
+}
+.pink {
+	background-color: pink;
+}
+.lg {
+	width: 350px;
+	height: 450px;
+	background: linear-gradient(#E6F7FF 0, #E6F7FF 340px, #F6FCFF 340px, #F6FCFF 100%);
+	transform: rotate(45deg);
+}
+ul {
+	text-align: center;
+}
+ul li {
+	display: inline-block;
+}
+.slick-wrap {
+	margin: 0 auto;
+	overflow-x: hidden;
+
+}
+.your-class {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+.your-class li img {
+	width: 100%;
+	height: auto;
+}
+.slick-slide {
+  transition: .3s ease;
+}
+.slick-slide:not(.slick-current) {
+  opacity: .5;
+}
+
+
+.hamburgerBtn {
+	position: fixed;
+	top: 10px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	background: yellow;
+	border: solid 2px blue;
+	transition: all 0.6s;
+	z-index: 10;
+}
+.hamburgerBtn:hover {
+	background: blue;
+	border: solid 2px yellow;
+}
+.hamburgerBtn:hover span:nth-child(n) {
+	background: yellow;
+}
+.hamburgerBtn span:nth-child(n) {
+	transition: all 0.4s;
+}
+.hamburgerBtn span:nth-child(1) {
+	position: absolute;
+	width: 30px;
+	height: 2px;
+	background: blue;
+	top: 13px;
+	left: 10px;
+}
+.hamburgerBtn span:nth-child(2) {
+	position: absolute;
+	width: 30px;
+	height: 2px;
+	background: blue;
+	top: 24px;
+	left: 10px;
+}
+.hamburgerBtn span:nth-child(3) {
+	position: absolute;
+	width: 30px;
+	height: 2px;
+	background: blue;
+	top: 35px;
+	left: 10px;
+}
+.hamburgerBtn span:nth-child(1).active {
+	transform: rotate(45deg);
+	top: 25px;
+}
+.hamburgerBtn span:nth-child(2).active {
+	display: none;
+}
+.hamburgerBtn span:nth-child(3).active {
+	transform: rotate(-45deg);
+	top: 25px;
+}
+.drower {
+	transform: translateX(-250px);
+	transition: transform 0.6s;
+	width: 250px;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+}
+
+.slide {
+	transform: translateX(0);
+}
+.drower nav {
+    width: 250px;
+    height: 100vh;
+    background-color: #384878;
+}
+    
+.drower nav ul {
+    height: 100%;
+    overflow: auto;
+  }
+        
+.navListSlideIn {
+  animation-name: fadeIn;
+}
+.drower nav ul li {
+  transform: translateX(-150%);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  display: block;
+}  
+
+
+/*nav ul li:nth-child(1){ animation-delay: .2s; }
+nav ul li:nth-child(2){ animation-delay: .3s; }
+nav ul li:nth-child(3){ animation-delay: .4s; }
+nav ul li:nth-child(4){ animation-delay: .5s; }
+nav ul li:nth-child(5){ animation-delay: .6s; }
+nav ul li:nth-child(6){ animation-delay: .7s; }
+nav ul li:nth-child(7){ animation-delay: .8s; }
+nav ul li:nth-child(8){ animation-delay: .9s; }
+nav ul li:nth-child(9){ animation-delay: 1s; }
+nav ul li:nth-child(10){ animation-delay: 1.1s; }*/
+
+nav ul li:nth-child(1){ animation-delay: .5s; }
+nav ul li:nth-child(2){ animation-delay: .6s; }
+nav ul li:nth-child(3){ animation-delay: .7s; }
+nav ul li:nth-child(4){ animation-delay: .8s; }
+nav ul li:nth-child(5){ animation-delay: .9s; }
+nav ul li:nth-child(6){ animation-delay: 1.0s; }
+nav ul li:nth-child(7){ animation-delay: 1.1s; }
+nav ul li:nth-child(8){ animation-delay: 1.2s; }
+nav ul li:nth-child(9){ animation-delay: 1.3s; }
+nav ul li:nth-child(10){ animation-delay: 1.4s; }
+nav ul li:nth-child(10){ animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}            
+nav ul li a {
+    display: block;
+    padding: 10px;
+    color :#ffffff;
+    text-decoration: none;
+}
+.slick-dots li {
+	margin: 0 30px;
+}
+.slick-dots li button::before {
+	content: '';
+	width: 60px;
+	height: 5px;
+	transform: skew(-45deg);
+	background-color: red;
+}
+.slick-dots li:nth-of-type(2) button::before {
+	background-color: blue;
+}
+.slick-dots li:nth-of-type(3) button::before {
+	background-color: green;
+}
+
+ .fadein {
+  opacity: 0;
+  transform : translate(0, 50px);
+  transition : all 1500ms;
+}
+
+.fadein.scrollin{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.start {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: green;
+	z-index: 5;
+}
+.up {
+	transform: translateY(-100%);
+	transition: transform 0.6s;
+}
+.greeting {
+	display: inline-block;
+	font-size: 30px;
+	padding: 10px;
+	margin: auto;
+	color: #fff;
+	background-color: red;
+	opacity: 0;
+	transform: translateX(-100%);
+	transition: opacity, transform 0.7s;
+}
+.slideIn {
+	opacity: 1;
+	transform: translateX(0);
+}
+@keyframes showText {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.greeting span {
+	animation: showText ease-out 2.0s backwards;
+	display: inline-block;
+}
+.tg {
+	display: flex;
+	width: 400px;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.tg__c {
+	position: relative;
+	width: 50px;
+	height: 300px;
+	top: 300px;
+	background-color: #333;
+	transition: top 2s;
+	margin-right: 50px;
+}
+.tg__c01.up2 {
+	top: 0;
+}
+.tg__c02.up2 {
+	top: 100px;
+}
+.tg__c03.up2 {
+	top: 200px;
+}
+</style>
+<title>each</title>
+</head>
+<body>
+<div class="hamburgerBtn">
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
+<div class="drower">
+	<nav>
+	    <ul>
+	        <li><a href="#">Item01</a></li>
+	        <li><a href="#">Item02</a></li>
+	        <li><a href="#">Item03</a></li>
+	        <li><a href="#">Item04</a></li>
+	        <li><a href="#">Item05</a></li>
+	        <li><a href="#">Item06</a></li>
+	        <li><a href="#">Item07</a></li>
+	        <li><a href="#">Item08</a></li>
+	        <li><a href="#">Item09</a></li>
+	        <li><a href="#">Item10</a></li>
+	    </ul>
+	</nav>
+</div>
+
+<div class="textAnimation" id="textAnimation">
+	<span style="animation-delay: 0.3s;">D</span>
+	<span style="animation-delay: 0.4s;">A</span>
+	<span style="animation-delay: 0.5s;">I</span>
+	<span style="animation-delay: 0.6s;">S</span>
+	<span style="animation-delay: 0.7s;">U</span>
+	<span style="animation-delay: 0.8s;">K</span>
+	<span style="animation-delay: 0.9s;">E</span>
+</div>
+<table>
+	<tr><th>text(...)</th><td>テキストを変更する</td></tr>
+	<tr><th>html(...)</th><td>HTMLを変更する</td></tr>
+	<tr><th>prepend(...)</th><td>要素内の先頭にHTMLを挿入する</td></tr>
+	<tr><th>append(...)</th><td>要素内の最後にHTMLを挿入する</td></tr>
+	<tr><th>before(...)</th><td>要素内の前にHTMLを挿入する</td></tr>
+	<tr><th>after(...)</th><td>要素内の後にHTMLを挿入する</td></tr>
+</table>
+<ul>
+	<li href="red">赤</li>
+	<li href="blue">青</li>
+	<li href="yellow">黄</li>
+	<li href="green">緑</li>
+	<li href="brown">茶</li>
+</ul>
+<div id="color" class="fadein">
+	<div id="wrap">
+		<ul>
+			<li class="red colors">red</li>
+			<li class="blue colors">blue</li>
+			<li class="yellow colors">yellow</li>
+		</ul>
+	</div>
+</div>
+<div class="slider">
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+<div class="indicator">
+	<div class="skew-box sb1">
+		<div class="skew-inner"></div>
+	</div>
+	<div class="skew-box sb2">
+		<div class="skew-inner"></div>
+	</div>
+	<div class="skew-box sb3">
+		<div class="skew-inner"></div>
+	</div>
+</div>
+<div class="lg"></div>
+
+<div class="tg">
+	<div class="tg__c tg__c01"></div>
+	<div class="tg__c tg__c02"></div>
+	<div class="tg__c tg__c03"></div>
+</div>
+
+<div class="slick-wrap">
+	<ul class="your-class">
+	  <li><img src="indiaImages/photo-1465979150986-c8b0fb12d861.jpg"></li>
+	  <li><img src="indiaImages/photo-1486548730767-5c679e8eda6b.jpg"></li>
+	  <li><img src="indiaImages/photo-1526234252162-ce107695b0fc.jpg"></li>
+	</ul>
+</div>
+
+
+<!-- <div class="start">
+	<p class="greeting">
+		<span style="animation-delay: 2.1s;">お</span>
+		<span style="animation-delay: 2.2s;">は</span>
+		<span style="animation-delay: 2.3s;">よ</span>
+		<span style="animation-delay: 2.4s;">う</span>
+		<span style="animation-delay: 2.5s;">ご</span>
+		<span style="animation-delay: 2.6s;">ざ</span>
+		<span style="animation-delay: 2.7s;">い</span>
+		<span style="animation-delay: 2.8s;">ま</span>
+		<span style="animation-delay: 2.9s;">す</span>
+	</p>
+</div> -->
+
+<script type="text/javascript">
+
+$(function() {
+	setTimeout(() => {
+	    $('.greeting').addClass('slideIn');
+		$('.greeting').css('opacity', 1);
+	  },
+	1000);
+	setTimeout(() => {
+	    $('.start').addClass('up');
+	  	 },
+	4000);
+
+
+    $(window).scroll(function (){
+    	$('.fadein').each(function(){
+        	var elemPos = $(this).offset().top,
+	            scroll = $(window).scrollTop(),
+	            windowHeight = $(window).height();
+          	if (scroll > elemPos - windowHeight + 50) {
+             	$(this).addClass('scrollin');
+            } else {
+            	$(this).removeClass('scrollin');	
+            }
+        });
+    });
+
+    function jj() {
+    	var elemPos = $(this).offset().top,
+	            scroll = $(window).scrollTop(),
+	            windowHeight = $(window).height();
+          	if (scroll > elemPos - windowHeight + 100) {
+              	$(this).addClass('up2');
+            } else {
+            	$(this).removeClass('up2');	
+            }
+    }
+
+    $(window).scroll(function (){
+    	$('.tg__c01, .tg__c02, .tg__c03').each(jj);
+    });
+
+	$('.hamburgerBtn').on('click',function() {
+		$('.drower').toggleClass('slide');
+		$('.drower nav ul li').toggleClass('navListSlideIn');
+		$("span:nth-child(1)", this).toggleClass('active');
+		$("span:nth-child(2)", this).toggleClass('active');
+		$("span:nth-child(3)", this).toggleClass('active');
+	});
+
+	$('table tr').each(function() {
+		$(this).html('<td>'+$('th', this).text()+'は'+$('td', this).text()+'</td>');
+	});
+
+	$('table').mousemove(function(e) {
+		// $('p').html('現在のX座標:'+e.clientX+'<br />現在のY座標:'+e.clientY);
+		if(e.clientX>700 && e.clientY>280) {
+			$('table').css('background-color', 'red');
+		} else {
+			$('table').css('background-color', 'green');
+		}
+	});
+	
+	
+	$('ul li').each(function() {
+		let $color = $(this).attr('href');
+		$(this).css('color', $color);
+	});
+	
+	
+
+	$('#color #wrap ul li:nth-child(n+2)').hide();
+	setInterval(function() {
+		$('#color #wrap ul li:first-child').fadeOut();
+		$('#color #wrap ul li:nth-child(2)').fadeIn();
+		$('#color #wrap ul li:first-child').appendTo('#color #wrap ul');
+	}, 3000);
+   
+   
+	let sb1 = $('.skew-box').eq(0);
+	let sb2 = $('.skew-box').eq(1);
+	let sb3 = $('.skew-box').eq(2);
+    sb1.addClass('pink');
+    setInterval(function() {
+    	if(sb1.hasClass('pink')) {
+	    	sb1.removeClass('pink');
+	    	sb2.addClass('pink');
+	    } else if(sb2.hasClass('pink')) {
+	   		sb2.removeClass('pink');
+	    	sb3.addClass('pink');
+	   	} else if(sb3.hasClass('pink')){
+	   		sb3.removeClass('pink');
+	    	sb1.addClass('pink');
+	   	}
+	   }, 3000);
+
+    //slick//
+    $('.your-class').slick({
+    	centerMode: true,
+	    autoplay: true,
+	    arrows: true,
+	    dots: true,
+	    fade: false,
+	    autoplaySpeed: 3000,
+	    speed: 3000,
+	    centerPadding: '20%',
+  	});
+    
+});	
+
+
+</script>
+<script type="text/javascript" src="slick-1.8.1/slick-1.8.1/slick/slick.min.js"></script>
+</body>
+</html> 
