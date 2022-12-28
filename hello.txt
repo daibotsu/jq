@@ -7,3 +7,4 @@ foo fighters
 soundgarden
 nirvana
 trapt
+hum
