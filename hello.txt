@@ -6,8 +6,12 @@ hell
 foo fighters
 soundgarden
 nirvana
+<<<<<<< HEAD
 trapt
 hum
 hinder
 creed
 strokes
+=======
+sevendust
+>>>>>>> nirvana
