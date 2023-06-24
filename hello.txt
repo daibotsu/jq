@@ -11,7 +11,11 @@ trapt
 hum
 hinder
 creed
+<<<<<<< HEAD
 strokes
 =======
 sevendust
 >>>>>>> nirvana
+=======
+strokes
+>>>>>>> 6/24-2
