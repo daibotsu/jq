@@ -10,3 +10,4 @@ trapt
 hum
 hinder
 creed
+strokes
