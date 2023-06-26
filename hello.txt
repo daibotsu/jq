@@ -17,6 +17,4 @@ seether
 apple
 orange
 godsmack
-=======
 filter
->>>>>>> seether
