@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 hello world
 deafheaven
 ash borer
@@ -16,3 +17,6 @@ seether
 apple
 orange
 godsmack
+=======
+filter
+>>>>>>> seether
