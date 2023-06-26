@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 hello world
 deafheaven
 ash borer
