@@ -11,3 +11,4 @@ hum
 hinder
 savages
 oasis
+blur
