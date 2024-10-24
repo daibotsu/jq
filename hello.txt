@@ -15,4 +15,8 @@ blur
 sublime
 days of the new
 creed
+<<<<<<< HEAD
 killers
+=======
+
+>>>>>>> 1024_2
