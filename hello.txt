@@ -15,8 +15,6 @@ blur
 sublime
 days of the new
 creed
-<<<<<<< HEAD
 killers
-=======
+linkin park
 
->>>>>>> 1024_2
