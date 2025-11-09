@@ -21,3 +21,4 @@ fire
 water
 edge
 wave
+finger
